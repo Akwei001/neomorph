@@ -8,8 +8,11 @@ function App() {
   return (
     <main>
       <h1>Hellooo</h1>
-      <Button>Submit</Button>
-      <Button>Cancel</Button>
+      <div className="space-x-2"> 
+        <Button>Submit</Button>
+        <Button>Cancel</Button>
+      </div>
+     
     </main>
   )
 }
