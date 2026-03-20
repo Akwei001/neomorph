@@ -9,7 +9,7 @@ function App() {
     <main>
       <h1>Hellooo</h1>
       <div className="space-x-2"> 
-        <Button>Submit</Button>
+        <Button className="text-primary">Submit</Button>
         <Button>Cancel</Button>
       </div>
      

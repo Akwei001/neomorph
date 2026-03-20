@@ -1,4 +1,4 @@
  export default function Button(props) {
-    const {children} = props;
-    return <button>{children}</button>
+    const {children, ...otherProps} = props;
+    return <button {...otherProps}>{children}</button>
  }
