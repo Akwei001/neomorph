@@ -7,8 +7,8 @@ const buttonVariants = cva("inline-flex justify-center items-center bg-red-200",
   variants:{
     variant:{
       default:"",
-      primary:"",
-      destructive:"",
+      primary:"bg-blue-400",
+      destructive:"bg-red-400",
       warning:"",
     },
     size:{
@@ -22,11 +22,12 @@ const buttonVariants = cva("inline-flex justify-center items-center bg-red-200",
   },
 });
  
- export default function Button(props) {
-   
+interface ButtonProps extends useRender.ComponentProps<"button">, VariantProps<typeof buttonVariants> {}
 
+ export default function Button(props: ButtonProps) {
+   
    const mergedProps = mergeProps(props, {
-      className: buttonVariants(),
+      className: buttonVariants({variant: props.variant, size: props.size}),
    });
 
    const element = useRender({
