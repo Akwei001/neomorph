@@ -11,7 +11,7 @@ function App() {
     <main>
       <h1>Hellooo</h1>
       <div className="space-x-2"> 
-        <Button variant={"primary"}>Submit</Button>
+        <Button variant={"primary"} >Submit</Button>
         <Button variant={"destructive"}>Cancel</Button>
       </div>
      

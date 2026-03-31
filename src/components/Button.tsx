@@ -1,5 +1,6 @@
  import { mergeProps, useRender } from "@base-ui/react";
- import {cva} from 'class-variance-authority'
+ import {cva, type VariantProps} from 'class-variance-authority';
+ import { twMerge } from "tailwind-merge";
  
 
 const buttonVariants = cva("inline-flex justify-center items-center bg-red-200", 
@@ -27,7 +28,9 @@ interface ButtonProps extends useRender.ComponentProps<"button">, VariantProps<t
  export default function Button(props: ButtonProps) {
    
    const mergedProps = mergeProps(props, {
-      className: buttonVariants({variant: props.variant, size: props.size}),
+      className: twMerge(buttonVariants({variant: props.variant, size: props.size}),
+    props.className,
+    ),
    });
 
    const element = useRender({
